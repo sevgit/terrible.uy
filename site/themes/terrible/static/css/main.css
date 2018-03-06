@@ -30,7 +30,10 @@
   font-weight: bold;
   
 }
-
+.planet {
+  display: block;
+  margin: -150px auto 0 auto;
+}
 .bajada {
   color: white;
   margin-top:35px;
