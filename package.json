@@ -1,8 +1,8 @@
 {
-  "name": "victor-hugo",
+  "name": "terrible.uy",
   "version": "1.0.0",
-  "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
-  "repository": "netlify/victor-hugo",
+  "description": "Terrible es una agencia digital de marketing y desarrollo.",
+  "repository": "sevgit/terrible.uy",
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",

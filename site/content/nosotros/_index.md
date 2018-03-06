@@ -1,0 +1,3 @@
+Nosotros
+
+{{ partial "footer.html" }}

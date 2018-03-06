@@ -1,0 +1,54 @@
+{{ partial "head.html" }}
+
+<div id="post-banner" style="background-image: url('{{ .Params.banner }}');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment: fixed;"></div> 
+
+<div class="post-hr-card">
+    {{ $author := .Params.author }}
+
+    {{ range $.Site.Data.authors }}
+    {{ if eq $author .nick }}
+    
+        <img src="{{ .avatar }}" alt="" class="">
+        <span>{{ .name }}</span>  
+        <span>{{ $.Params.date}}</span> 
+        <a href={{ .web }}>{{ .webtag }}</a>
+          
+        
+      {{end}}
+    {{end}}
+
+</div>
+<div class="post-container">
+
+  <div class="post-body">
+    <div class="post-title">
+      <h1> {{ .Title }}</h1>
+      <h4 class="tagline">{{ .Params.tagline }}</h4>
+    </div> 
+    {{ .Content }}
+  </div>
+
+  <div class="post-card"> 
+      {{ $author := .Params.author }}
+
+      {{ range $.Site.Data.authors }}
+      {{ if eq $author .nick }}
+      
+          <img class="card-author-img" src="{{ .avatar }}" alt="">
+          
+          <span class="card-author-name">{{ .name }}</span>
+          <div class="card-author-details"><a href={{ .web }}>{{ .web }}</a></div>
+            
+          
+        {{end}}
+      {{end}}
+
+   
+    
+
+  
+  </div>
+
+</div>
+
+{{ partial "footer.html"}}

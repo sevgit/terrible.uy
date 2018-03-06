@@ -1,9 +1,116 @@
 baseurl = "/"
-languageCode = "en-us"
-languageLang = "en"
-title = "My new Victor-Hugo site"
+title = "Terriblemente terrible"
+theme = "terrible"
+languageCode = "es"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "es"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "devcows"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
 
-# RSS, categories and tags disabled for an easy start
-# See configuration options for more details: 
-# https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+# Define the number of posts per page
+paginate = 10
+
+[menu]
+
+# Main menu
+
+[[menu.main]]
+    name = "Inicio"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Blog"
+    url  = "/blog/"
+    weight = 2
+
+[[menu.main]]
+    name = "FAQ"
+    identifier = "faq"
+    url  = "/faq/"
+    weight = 3
+
+[[menu.main]]
+    name = "Contacto"
+    url  = "/contacto/"
+    weight = 4
+
+# Top bar social links menu
+
+[[menu.topbar]]
+    weight = 1
+    name = "GitHub"
+    url = "https://github.com/sevgit"
+    pre = "<i class='fa fa-2x fa-github'></i>"
+
+[[menu.topbar]]
+    weight = 2
+    name = "Facebook"
+    url = "http://facebook.com"
+    pre = "<i class='fa fa-2x fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 3
+    name = "Twitter"
+    url = "http://twitter.com/bastianventura"
+    pre = "<i class='fa fa-2x fa-twitter'></i>"
+
+[[menu.topbar]]
+    weight = 4
+    name = "Email"
+    url = "mailto:hola@terrible.uy"
+    pre = "<i class='fa fa-2x fa-envelope'></i>"
+
+[params]
+    viewMorePostLink = "/blog/"
+    author = "Sebastián Ventura"
+    defaultKeywords = ["Marketing", "Desarrollo", "Open Source"]
+    defaultDescription = "Blog de Marketing y Desarrollo"
+
+    # Google Maps API key (if not set will default to not passing a key.)
+    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
+
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    style = "pink"
+
+    # Since this template is static, the contact form uses www.formspree.io as a
+    # proxy. The form makes a POST request to their servers to send the actual
+    # email. Visitors can send up to a 1000 emails each month for free.
+    #
+    # What you need to do for the setup?
+    #
+    # - set your email address under 'email' below
+    # - upload the generated site to your server
+    # - send a dummy email yourself to confirm your account
+    # - click the confirm link in the email from www.formspree.io
+    # - you're done. Happy mailing!
+    #
+    # Enable the contact form by entering your Formspree.io email
+    email = "hola@terrible.uy"
+
+    about_us = "<p>Somos los que estamos.</p>"
+    copyright = "Copyright (c) 2017, terrible; todos los derechos reservados."
+
+    # Format dates with Go's time formatting
+    date_format = "Monday _2 de January, 2006"
+
+    logo = "img/logo.png"
+    address = """<p>
+        <strong>hola@terrible.uy</strong>
+         </p>
+      """
+ 
+
+[Permalinks]
+    blog = "/blog/:filename/"
+
+# Enable or disable top bar with social icons
+[params.topbar]
+    enable = true
+    text = """<p class="hidden-sm hidden-xs">Contactanos por el +598 095 083 585 o por correo a hola@terrible.uy.</p>
+      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
+      <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+      </p>
+      """
