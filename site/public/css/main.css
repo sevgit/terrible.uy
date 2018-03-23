@@ -1,23 +1,219 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/*
+  You can use import statements to include partials:
+ */
+ @import "imports/reset.css";
 
-.footer {
-  color: greenyellow;
-}
 
-.header {
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(45deg, #55b0ba 0%,#91d0d6 100%);
-}
-
-.logo-subtitle {
-  color: #eeeeee;
-  font-size:18px;
-}
+ * {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+ }
+ 
+ .footer {
+   color: red;
+ }
+ .logo {
+   max-width: 80%;
+ }
+ .header {
+   display: flex;
+   align-items:center;
+   justify-content: center;
+   flex-direction: column;
+   height: 90vh;
+   background: linear-gradient(45deg, #55b0ba 0%,#91d0d6 100%);
+ }
+ 
+ .divider {
+   margin-top:-150px;
+ }
+ 
+ .logo-subtitle {
+   color: rgba(255,255,255,0.8);
+   font-size:12px;
+   font-weight: bold;
+   font-family: 'Roboto', sans-serif;
+ }
+ 
+ .bajada {
+   color: white;
+   margin-top:35px;
+   font-size:20px;
+  
+   font-family: 'Roboto', sans-serif;
+ }
+ #post-banner {
+   width: 100%;
+   height: 70vh;
+   overflow: hidden;
+   -webkit-box-shadow: inset 0px -11px 24px -5px rgba(0,0,0,0.75);
+ -moz-box-shadow: inset 0px -11px 24px -5px rgba(0,0,0,0.75);
+ box-shadow: inset 0px -11px 24px -5px rgba(0,0,0,0.75);
+ }
+ 
+ .post-title {
+   max-width: 740px;
+   margin: 0 auto;
+ }
+ .post-container {
+   display: grid;
+ 
+   grid-gap: 8px;
+   font-family: 'Adamina', serif;
+   color:rgba(0,0,0,.84);
+   grid-template-columns: 1fr minmax(300px,900px) 1fr;
+   grid-template-rows: auto 1fr;
+   grid-template-areas: "card title" "card content";
+ }
+ 
+ .post-body {
+   grid-area: content;
+   
+   width: 100%;
+   padding: 0 15px; 
+   font-size: 18px;
+   color: rgba(0,0,0,.84);
+   line-height: 1.58;
+ }
+ .post-body figure img {
+   max-width: 100%;
+   margin-top: 29px;
+ 
+   
+   
+ }
+ .post-body p {
+   margin: 29px auto 0 auto;
+   max-width: 740px;
+ }
+ 
+ .post-hr-card {
+   display: grid;
+   font-family: 'Roboto', serif;
+   font-weight: 600;
+   font-size:14px;
+   color:rgba(0,0,0,.44);
+   grid-template-columns: 40px auto auto auto 1fr;
+   grid-gap: 15px;
+   align-items: center;
+   padding: 10px 0;
+   margin: 50px auto 20px auto;
+   max-width: 740px;
+ }
+ 
+ .post-hr-card a {
+   color: #55b0ba;
+   padding: 2px 8px;
+   display:inline-block;
+   border: 1px solid #55b0ba;
+   border-radius: 25px;
+   text-decoration: none;
+   font-weight: 400;
+ }
+ .post-hr-card img {
+   display:block;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+ }
+ .post-card {
+   display: grid;
+   margin-top:18px;
+   grid-template-rows: auto-fit auto auto;
+   justify-self:end;
+   grid-template-areas: "photo" "name" "details";
+   font-size: 14px;
+   padding-top: 5px;
+   max-height: 350px;
+   max-width: 190px;
+   grid-area: card;
+   grid-gap: 5px;
+   width: 100%;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-top-left-radius: 40% 20%;
+   -webkit-box-shadow: 0px 7px 16px -6px rgba(0,0,0,0.29);
+   -moz-box-shadow: 0px 7px 16px -6px rgba(0,0,0,0.29);
+   box-shadow: 0px 7px 16px -6px rgba(0,0,0,0.29);
+   
+   
+ }
+ .card-author-img {
+   grid-area: photo;
+   border-top-left-radius: 40%;
+   justify-self: center;
+   padding: 0 5px;
+   max-width: 100%;
+ }
+ .card-author-name {
+   font-weight: 700;
+   font-size: 18px;
+   text-align: center;
+   grid-area: name;
+ }
+ 
+ .card-author-details {
+   margin: 0 auto;
+   grid-area: details;
+ }
+ 
+ .card-author-details a {
+   color: #55b0ba;
+   padding: 2px 8px;
+   border: 1px solid #55b0ba;
+   border-radius: 25px;
+   text-decoration: none;
+ }
+ 
+ .tagline {
+   margin-top: 5px;
+   margin-bottom: 10px;
+   position: relative;
+   color: rgba(0,0,0,.5);
+   
+   
+ }
+ 
+ .tagline:after {
+   content: '';
+   width: 92px;
+   height: 4px;
+   background: #55b0ba;
+   position: absolute;
+   bottom: -16px;
+   left: 0px;
+ }
+ 
+ @media (max-width: 900px) {
+   .post-container {
+     grid-template-columns: 1fr auto-fit 1fr;
+     grid-template-rows: auto-fit 1fr 1fr;
+     grid-template-areas: "white title space" "white content space" "white card space";
+     
+   }
+   
+   .card-author-img {
+     padding:0;
+     justify-self:start;
+   }
+   .card-author-name {align-self:end;}
+   .post-card {
+     grid-template-columns: 1fr 3fr;
+     grid-template-rows: auto auto;
+     grid-template-areas: "photo name" "photo details";
+     justify-self: start;
+     max-width: 100%;
+     padding:0;
+   }
+   .card span {
+     display: inline-block;
+     
+   }
+   .post-body, .post-title {
+     padding: 0;
+   }
+ }
+ 
+ body {
+     background:red
+ }
