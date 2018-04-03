@@ -15,13 +15,14 @@
  }
  .logo {
    max-width: 80%;
+   
  }
  .header {
    display: flex;
    align-items:center;
    justify-content: center;
    flex-direction: column;
-   height: 90vh;
+   height: 1105vh;
    background: linear-gradient(45deg, #55b0ba 0%,#91d0d6 100%);
  }
  
